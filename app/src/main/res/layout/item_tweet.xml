@@ -36,4 +36,14 @@
         android:layout_marginTop="2dp"
         android:layout_toEndOf="@+id/ivProfileImage"
         tools:text="This is a sample tweet" />
+
+    <TextView
+        android:id="@+id/tvTimestamp"
+        android:layout_width="68dp"
+        android:layout_height="21dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="204dp"
+        android:layout_toEndOf="@+id/tvScreenName"
+        tools:text="57min" />
 </RelativeLayout>

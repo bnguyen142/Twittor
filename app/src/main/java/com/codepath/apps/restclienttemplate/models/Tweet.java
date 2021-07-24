@@ -6,11 +6,14 @@ import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import com.codepath.apps.restclienttemplate.TimeFormatter;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.parceler.Parcel;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,6 +37,8 @@ public class Tweet {
     @Ignore
     public User user;
 
+
+
     // empty constructor needed by the Parceler library
     public Tweet(){}
 
@@ -41,6 +46,7 @@ public class Tweet {
         Tweet tweet = new Tweet();
         tweet.body = jsonObject.getString("text");
         tweet.createdAt = jsonObject.getString("created_at");
+        //tweet.getFormatedTimestamp("created_at");
         tweet.id = jsonObject.getLong("id");
         User user = User.fromJson(jsonObject.getJSONObject("user"));
         tweet.user = user;
@@ -54,5 +60,9 @@ public class Tweet {
             tweets.add(fromJson(jsonArray.getJSONObject(i)));
         }
         return tweets;
+    }
+
+    public String getFormatted() {
+        return TimeFormatter.getTimeDifference(createdAt);
     }
 }
