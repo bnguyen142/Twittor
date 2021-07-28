@@ -1,5 +1,7 @@
 package com.codepath.apps.restclienttemplate.models;
 
+import android.util.Log;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
@@ -37,12 +39,15 @@ public class Tweet {
     @Ignore
     public User user;
 
+    @ColumnInfo
+    public String timeStamp;
 
 
     // empty constructor needed by the Parceler library
     public Tweet(){}
 
     public static Tweet fromJson(JSONObject jsonObject) throws JSONException {
+        //Log.d("Tweet",jsonObject.toString());
         Tweet tweet = new Tweet();
         tweet.body = jsonObject.getString("text");
         tweet.createdAt = jsonObject.getString("created_at");
@@ -51,6 +56,8 @@ public class Tweet {
         User user = User.fromJson(jsonObject.getJSONObject("user"));
         tweet.user = user;
         tweet.userId = user.id;
+        tweet.timeStamp= jsonObject.getString("created_at");
+        Log.d("Tweet",jsonObject.getString("created_at"));
         return tweet;
     }
 
