@@ -37,7 +37,7 @@ Here's a walkthrough of implemented user stories:
 <img src="twittor.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
 <img src="twittor2.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
 <img src="twittor3.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src="timestamp.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src="timestamp11.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
